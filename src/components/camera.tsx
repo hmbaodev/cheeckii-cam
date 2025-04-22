@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 
 const Camera = () => {
-  const [flip, setFlip] = useState<boolean>(false);
+  const [flip, setFlip] = useState<boolean>(true);
   const [cameraOn, setCameraOn] = useState<boolean>(true);
   const [photos, setPhotos] = useState<string[]>([]);
 
@@ -24,7 +24,7 @@ const Camera = () => {
   };
 
   const stopCamera = () => {
-    streamRef.current?.getTracks().forEach(track => track.stop());
+    streamRef.current?.getTracks().forEach((track) => track.stop());
     streamRef.current = null;
     if (videoRef.current) {
       videoRef.current.srcObject = null;
@@ -39,7 +39,7 @@ const Camera = () => {
   const toggleCamera = () => {
     if (cameraOn) stopCamera();
     else startCamera();
-    setCameraOn(prev => !prev);
+    setCameraOn((prev) => !prev);
   };
 
   const takeSnapshot = () => {
@@ -64,7 +64,7 @@ const Camera = () => {
     context.restore(); // Restore context after flipping
 
     const imageData = canvas.toDataURL("image/png");
-    setPhotos(prevPhotos => [...prevPhotos, imageData]);
+    setPhotos((prevPhotos) => [...prevPhotos, imageData]);
   };
 
   return (
@@ -79,7 +79,7 @@ const Camera = () => {
 
       <div className="flex flex-wrap gap-4">
         <button
-          onClick={() => setFlip(prev => !prev)}
+          onClick={() => setFlip((prev) => !prev)}
           className="rounded bg-amber-300 px-4 py-2"
         >
           Flip Camera
