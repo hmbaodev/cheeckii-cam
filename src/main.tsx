@@ -7,28 +7,29 @@ import App from "./App.tsx";
 import Capture from "./routes/Capture.tsx";
 import Frame from "./routes/Frame.tsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/capture",
-        element: <Capture />
-      },
-      {
-        path: "/frame",
-        element: <Frame />
-      }
-    ]
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//     children: [
+//       {
+//         path: "/capture",
+//         element: <Capture />
+//       },
+//       {
+//         path: "/frame",
+//         element: <Frame />
+//       }
+//     ]
+//   },
+// ]);
 
 const container = document.getElementById("root")
 const root = createRoot(container!);
 
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <App />
   </StrictMode>,
 );
