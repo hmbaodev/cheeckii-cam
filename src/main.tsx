@@ -1,11 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router";
+// import { createBrowserRouter, RouterProvider } from "react-router";
 
 import "./index.css";
 import App from "./App.tsx";
-import Capture from "./routes/Capture.tsx";
-import Frame from "./routes/Frame.tsx";
+// import Capture from "./routes/Capture.tsx";
+// import Frame from "./routes/Frame.tsx";
 
 // const router = createBrowserRouter([
 //   {
